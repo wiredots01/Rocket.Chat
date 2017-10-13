@@ -81,14 +81,14 @@ fileUpload = function(filesToUpload) {
 			if (file.type === 'audio') {
 				text = `\
 <div class='upload-preview'>
-	<audio  style="width: 100%;" controls="controls">
+	<audio  style="width: 100%;" controls="controls" controlsList="nodownload">
 		<source src="${ preview }" type="audio/wav">
 		Your browser does not support the audio element.
 	</audio>
 </div>
 <div class='upload-preview-title'>
-	<input id='file-name' style='display: inherit;' value='${ Handlebars._escape(file.name) }' placeholder='${ t('Upload_file_name') }'>
-	<input id='file-description' style='display: inherit;' value='' placeholder='${ t('Upload_file_description') }'>
+	<input id='file-name' style='display: none;' value='${ Handlebars._escape('Audio message.wav') }' placeholder='${ t('Upload_file_name') }'>
+	<input id='file-description' style='display: none;' value='' placeholder='${ t('Upload_file_description') }'>
 </div>`;
 			} else if (file.type === 'video') {
 				text = `\

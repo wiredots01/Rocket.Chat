@@ -134,6 +134,9 @@ const methods = {
 	actions() {
 		const groups = RocketChat.messageBox.actions.get();
 		return Object.keys(groups).reduce((ret, el) => ret.concat(groups[el]), []);
+	},
+	onlyMic(icon) {
+		return icon === 'mic';
 	}
 };
 
@@ -165,6 +168,7 @@ Template.messageBox.helpers({
 		return RocketChat.settings.get('Message_ShowFormattingTips');
 	},
 	canJoin() {
+		console.log('awa ni');
 		return Meteor.userId() && RocketChat.roomTypes.verifyShowJoinLink(this._id);
 	},
 	joinCodeRequired() {

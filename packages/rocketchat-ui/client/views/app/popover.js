@@ -15,6 +15,17 @@ this.popover = {
 	}
 };
 
+Template.popover.helpers({
+	removeMyAccountLogout(name) {
+		if (name === 'My Account' || name === 'Logout') {
+			return false;
+		}
+		return true;
+	}
+});
+
+
+
 Template.popover.onRendered(function() {
 	if (this.data.onRendered) {
 		this.data.onRendered();
